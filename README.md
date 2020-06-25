@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/274881041.svg)](https://zenodo.org/badge/latestdoi/274881041)
+
+
 # TraceableRobotModels
 
 The aim of this repository is to create a location where robot models (in URDF format) can be shared which are traceable using published literature.
@@ -9,3 +12,4 @@ Current models available:
 - ETS-VII
 
 
+A DOI for citing this repository is given at the top of this Readme as a badge. This is generated using Zenodo. Click the badge for more information on citing this repository.
