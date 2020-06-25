@@ -1,0 +1,288 @@
+<?xml version="1.0" ?>
+
+<!-- URDF Created from the following Paper:
+K. Yoshida, “Engineering test satellite VII flight experiments for space robot dynamics and control: Theories on laboratory test beds ten years ago, now in orbit,” Int. J. Rob. Res., vol. 22, no. 5, pp. 321–335, 2003.
+
+The inertial parameters were taken from this paper:
+K. Yoshida and S. Abiko, “Inertia parameter identification for a free-flying space robot,” AIAA Guid. Navig. Control Conf. Exhib., no. August, pp. 1–8, 2002.
+
+Created by Shubham Vyas, 2020.
+ -->
+
+<robot name="ETS_VII">
+
+  <!-- Colors -->
+  <material name="Grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="Orange">
+    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+  </material>
+  <material name="Blue">
+  <color rgba="0.5 0.7 1.0 1.0"/>      
+  </material>
+  <material name="Red">
+    <color rgba="1 0 0 1.0"/>      
+  </material>
+
+
+
+  <!--Spacecraft-->
+  <link name="Base_SC">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2550"/>
+      <inertia ixx="6200" ixy="48.2" ixz="78.5" iyy="3540" iyz="-29.2" izz="7090"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="2.2 2.1 2" />
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+  </link>
+
+  <!-- Joint 1 -->
+  <joint name="Joint_1" type="continuous">
+    <parent link="Base_SC"/>
+    <child link="Link_1"/>
+    <origin rpy="0 0 3.1416" xyz="-0.79 -0.29 1"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  
+
+  <!--Manipulator-->
+  <!-- Link 1 -->
+  <link name="Link_1">
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.175"/>
+      <mass value="35"/>
+      <inertia ixx="0.25" ixy="0" ixz="0" iyy="0.25" iyz="0" izz="1.69"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.175"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.35"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="1.5708 0 0" xyz="0 -0.14 0.35"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.28"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.02"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+
+  </link>
+
+    <!-- Joint 2 -->
+  <joint name="Joint_2" type="continuous">
+    <parent link="Link_1"/>
+    <child link="Link_2"/>
+    <origin rpy="-1.570796 0 0" xyz="0 -0.275 0.35"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Link 2 -->
+  <link name="Link_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.435 0"/>
+      <mass value="22.5"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="1.31" iyz="0" izz="3.75"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="1.5708 0 0" xyz="0 -0.435 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.87"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.02"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+  </link>
+
+  <!-- Joint 3 -->
+  <joint name="Joint_3" type="continuous">
+    <parent link="Link_2"/>
+    <child link="Link_3"/>
+    <origin rpy="0 0 0" xyz="0 -0.87 0.0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Link 3 -->
+  <link name="Link_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.275 0 0"/>
+      <mass value="21.9"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.71" iyz="0" izz="2.53"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 1.5708 0" xyz="-0.315 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.63"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.02"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+  </link>
+
+  <!-- Joint 4 -->
+  <joint name="Joint_4" type="continuous">
+    <parent link="Link_3"/>
+    <child link="Link_4"/>
+    <origin rpy="0 0 0" xyz="-0.63 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+    <!-- Link 4 -->
+  <link name="Link_4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.1335"/>
+       <mass value="16.5"/>
+       <inertia ixx="0.15" ixy="0" ixz="0.0" iyy="0.15" iyz="0" izz="0.073"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.13"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.26"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.02"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    
+  </link>
+
+  <!-- Joint 5 -->
+  <joint name="Joint_5" type="continuous">
+    <parent link="Link_4"/>
+    <child link="Link_5"/>
+    <origin rpy="1.5708 0 0" xyz="0 0 0.26"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+    <!-- Link 5 -->
+  <link name="Link_5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.1385"/>
+       <mass value="26"/>
+       <inertia ixx="0.15" ixy="0" ixz="0.0" iyy="0.15" iyz="0" izz="0.13"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.14"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.28"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.02"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+  </link>
+
+  <!-- Joint 6 -->
+  <joint name="Joint_6" type="continuous">
+    <parent link="Link_5"/>
+    <child link="Link_6"/>
+    <origin rpy="0 -1.5708 0" xyz="0 0 0.28"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+    <!-- Link 6 -->
+  <link name="Link_6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.133"/>
+       <mass value="18.5"/>
+       <inertia ixx="0.97" ixy="0" ixz="0" iyy="0.97" iyz="0" izz="0.26"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.265"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.53"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.02"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+  </link>
+
+  <!-- End-Effector -->
+  <link name="link_ee">
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.06"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+  </link>
+
+  <joint name="joint_ee_fixed" type="fixed">
+    <parent link="Link_6"/>
+    <child link="link_ee"/>
+    <origin rpy="0 0 0" xyz="0 0 0.53"/>
+  </joint>
+
+
+
+</robot>
