@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 
 <!-- URDF Created from the following Paper:
-K. Yoshida, “Engineering test satellite VII flight experiments for space robot dynamics and control: Theories on laboratory test beds ten years ago, now in orbit,” Int. J. Rob. Res., vol. 22, no. 5, pp. 321–335, 2003.
+K. Yoshida, "Engineering test satellite VII flight experiments for space robot dynamics and control: Theories on laboratory test beds ten years ago, now in orbit," Int. J. Rob. Res., vol. 22, no. 5, pp. 321-335, 2003.
 
 The inertial parameters were taken from this paper:
-K. Yoshida and S. Abiko, “Inertia parameter identification for a free-flying space robot,” AIAA Guid. Navig. Control Conf. Exhib., no. August, pp. 1–8, 2002.
+K. Yoshida and S. Abiko, "Inertia parameter identification for a free-flying space robot," AIAA Guid. Navig. Control Conf. Exhib., no. August, pp. 1-8, 2002.
 
 Created by Shubham Vyas, 2020.
  -->
