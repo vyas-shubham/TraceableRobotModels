@@ -4,6 +4,8 @@
 
 Nguyen, Phung Khac, and Peter C. Hughes. "Teleoperation: from the space shuttle to the space station." Progress in astronautics and aeronautics 161 (1994): 353-353.
 
+The link CoM locations (with respect to link frame) are set to zero as the inertia tensor is defined with respect to the link frame in the paper.
+
  -->
 
 <robot name="SRMS_Canadarm">
@@ -52,7 +54,7 @@ Nguyen, Phung Khac, and Peter C. Hughes. "Teleoperation: from the space shuttle 
   <link name="B1">
 
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 -0.2856"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="63.24"/>
       <inertia ixx="3.664" ixy="0.0044" ixz="0.0047" iyy="3.803" iyz="0.506" izz="0.686"/>
     </inertial>
@@ -81,7 +83,7 @@ Nguyen, Phung Khac, and Peter C. Hughes. "Teleoperation: from the space shuttle 
   <link name="B2">
 
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 -0.1524"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="32.12"/>
       <inertia ixx="1.115" ixy="-0.019" ixz="-0.08" iyy="1.417" iyz="-0.037" izz="0.595"/>
     </inertial>
@@ -119,7 +121,7 @@ Nguyen, Phung Khac, and Peter C. Hughes. "Teleoperation: from the space shuttle 
   <link name="B3">
 
     <inertial>
-      <origin rpy="0 0 0" xyz="3.1883 0 0.0282"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="139.35"/>
       <inertia ixx="3.225" ixy="-1.928" ixz="9.185" iyy="998.63" iyz="-0.0302" izz="997.18"/>
     </inertial>
@@ -156,7 +158,7 @@ Nguyen, Phung Khac, and Peter C. Hughes. "Teleoperation: from the space shuttle 
   <link name="B4">
 
     <inertial>
-      <origin rpy="0 0 0" xyz="3.53 0 0.0066"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="87.42"/>
       <inertia ixx="1.59" ixy="0.8021" ixz="-3.786" iyy="632.9" iyz="-0.08" izz="632.51"/>
     </inertial>
@@ -193,7 +195,7 @@ Nguyen, Phung Khac, and Peter C. Hughes. "Teleoperation: from the space shuttle 
   <link name="B5">
 
     <inertial>
-      <origin rpy="0 0 0" xyz="0.2286 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="8.48"/>
       <inertia ixx="0.0893" ixy="0" ixz="0" iyy="0.402" iyz="0" izz="0.402"/>
     </inertial>
@@ -229,7 +231,7 @@ Nguyen, Phung Khac, and Peter C. Hughes. "Teleoperation: from the space shuttle 
   <link name="B6">
 
     <inertial>
-      <origin rpy="0 0 0" xyz="0.381 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="45.94"/>
       <inertia ixx="0.408" ixy="0" ixz="0" iyy="4.68" iyz="0" izz="4.68"/>
     </inertial>
@@ -265,7 +267,7 @@ Nguyen, Phung Khac, and Peter C. Hughes. "Teleoperation: from the space shuttle 
   <link name="B7">
 
     <inertial>
-      <origin rpy="0 0 0" xyz="0.3302 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="45.21"/>
       <inertia ixx="1.903" ixy="0.385" ixz="0.966" iyy="3.816" iyz="0.353" izz="2.823"/>
     </inertial>
