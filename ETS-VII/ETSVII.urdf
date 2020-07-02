@@ -57,7 +57,7 @@ Created by Shubham Vyas, 2020.
   <link name="Link_1">
 
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0.175"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="35"/>
       <inertia ixx="0.25" ixy="0" ixz="0" iyy="0.25" iyz="0" izz="1.69"/>
     </inertial>
@@ -86,7 +86,6 @@ Created by Shubham Vyas, 2020.
       <material name="Red"/>
     </visual>
 
-
   </link>
 
     <!-- Joint 2 -->
@@ -100,7 +99,7 @@ Created by Shubham Vyas, 2020.
   <!-- Link 2 -->
   <link name="Link_2">
     <inertial>
-      <origin rpy="0 0 0" xyz="0 -0.435 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="22.5"/>
       <inertia ixx="0.1" ixy="0" ixz="0" iyy="1.31" iyz="0" izz="3.75"/>
     </inertial>
@@ -134,7 +133,7 @@ Created by Shubham Vyas, 2020.
   <!-- Link 3 -->
   <link name="Link_3">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.275 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="21.9"/>
       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.71" iyz="0" izz="2.53"/>
     </inertial>
@@ -168,7 +167,7 @@ Created by Shubham Vyas, 2020.
     <!-- Link 4 -->
   <link name="Link_4">
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0.1335"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
        <mass value="16.5"/>
        <inertia ixx="0.15" ixy="0" ixz="0.0" iyy="0.15" iyz="0" izz="0.073"/>
     </inertial>
@@ -202,7 +201,7 @@ Created by Shubham Vyas, 2020.
     <!-- Link 5 -->
   <link name="Link_5">
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0.1385"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
        <mass value="26"/>
        <inertia ixx="0.15" ixy="0" ixz="0.0" iyy="0.15" iyz="0" izz="0.13"/>
     </inertial>
@@ -236,7 +235,7 @@ Created by Shubham Vyas, 2020.
     <!-- Link 6 -->
   <link name="Link_6">
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0.133"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
        <mass value="18.5"/>
        <inertia ixx="0.97" ixy="0" ixz="0" iyy="0.97" iyz="0" izz="0.26"/>
     </inertial>

@@ -10,4 +10,4 @@ The publications used for creating the robot model URDF file are as follows:
 - The inertial parameters were taken from the following paper: K. Yoshida and S. Abiko, “Inertia parameter identification for a free-flying space robot,” AIAA Guid. Navig. Control Conf. Exhib., no. August, pp. 1–8, 2002.
 
 
-Since, the inertial parameter estimation paper does not mention the location of CoM of the link, these were taken from the ETS-VII example files of the "Basic Muiltibody Simulator Derived" made by Dr. Dimitar Dimitrov. This can be found at: https://github.com/drdv/bmsd.
+The inertial parameter estimation paper does not mention the location of the inertial frame in which the inertia tensor is represented in. For the Spacecraft base, this is taken as the center of mass/center. For the link in the manipulator arm, the inertia tensors are given with respect to the link frames.
