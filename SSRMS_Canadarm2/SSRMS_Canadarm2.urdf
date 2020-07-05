@@ -1,0 +1,353 @@
+<?xml version="1.0" ?>
+
+<!-- URDF Created from information in the following Paper:
+
+Nguyen, Phung Khac, and Peter C. Hughes. "Teleoperation: from the space shuttle to the space station." Progress in astronautics and aeronautics 161 (1994): 353-353.
+
+The link CoM locations (with respect to link frame) are set to zero as the inertia tensor is defined with respect to the link frame in the paper.
+
+ -->
+
+<robot name="SSRMS_Canadarm2">
+
+  <!-- Colors -->
+  <material name="Grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="Orange">
+    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+  </material>
+  <material name="Blue">
+  <color rgba="0.5 0.7 1.0 1.0"/>      
+  </material>
+  <material name="Red">
+    <color rgba="1 0 0 1.0"/>      
+  </material>
+
+  <!-- SSRMS_Canadarm2 Dummy Base Body-->
+  <link name="Base_SSRMS">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="1.5 2 1" />
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+  </link>
+
+  <!-- Dummy Joint Joining Base to Body B1 -->
+  <joint name="dummyBaseJoint" type="fixed">
+    <parent link="Base_SSRMS"/>
+    <child link="B1"/>
+    <!-- Rotate Frame to Match the frames on Fig. 13 in Paper -->
+    <origin rpy="3.1416 0 0" xyz="0.75 0 0"/>
+  </joint>
+
+
+  <!--Manipulator-->
+  <!-- Link 1 -->
+  <link name="B1">
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="243.66"/>
+      <inertia ixx="9.336" ixy="0" ixz="0" iyy="44.413" iyz="0" izz="44.413"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 1.5708 0" xyz="0.67945 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="1.3589"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+  </link>
+
+  <!-- Joint 1: Shoulder Roll Joint -->
+  <joint name="Shoulder_Roll" type="revolute">
+    <parent link="B1"/>
+    <child link="B2"/>
+    <origin rpy="0 0 0" xyz="1.3589 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-4.71239" upper="4.71239" effort="2332" velocity="0.0698132"/>
+  </joint>
+
+  <!-- Link 2 -->
+  <link name="B2">
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="105.98"/>
+      <inertia ixx="12.19" ixy="0" ixz="0" iyy="12.13" iyz="0" izz="3.061"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.3513"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.7026"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+  </link>
+
+  <!-- Joint 2: Shoulder Yaw Joint -->
+  <joint name="Shoulder_Yaw" type="revolute">
+    <parent link="B2"/>
+    <child link="B3"/>
+    <origin rpy="0 0 0" xyz="0 0 0.7026"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-4.71239" upper="4.71239" effort="2332" velocity="0.0698132"/>
+  </joint>
+
+  <!-- Link 3 -->
+  <link name="B3">
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="105.98"/>
+      <inertia ixx="8.088" ixy="0" ixz="0" iyy="3.061" iyz="0" izz="8.446"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="1.5708 0 0" xyz="0 -0.2846 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.5692"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+  </link>
+
+  <!-- Joint 3: Shoulder Pitch Joint -->
+  <joint name="Shoulder_Pitch" type="revolute">
+    <parent link="B3"/>
+    <child link="B4"/>
+    <origin rpy="0 0 0" xyz="0 -0.5692 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-4.71239" upper="4.71239" effort="2332" velocity="0.0698132"/>
+  </joint>
+
+  <!-- Link 4 -->
+  <link name="B4">
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="314.88"/>
+      <inertia ixx="15.41" ixy="49.52" ixz="0" iyy="2094.71" iyz="0" izz="2103.19"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 1.5708 0" xyz="3.555 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="7.11"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="1.5708 0 0" xyz="7.11 -0.2375 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.475"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+  </link>
+
+  <!-- Joint 4: Elbow Pitch Joint -->
+  <joint name="Elbow_Pitch" type="revolute">
+    <parent link="B4"/>
+    <child link="B5"/>
+    <origin rpy="0 0 0" xyz="7.11 -0.475 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-4.71239" upper="4.71239" effort="2332" velocity="0.0698132"/>
+  </joint>
+
+  <!-- Link 5 -->
+  <link name="B5">
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="279.2"/>
+      <inertia ixx="9.522" ixy="-39.95" ixz="0" iyy="1966.28" iyz="0" izz="1966.28"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 1.5708 0" xyz="3.555 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="7.11"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+  </link>
+
+  <!-- Joint 5: Wrist Pitch Joint -->
+  <joint name="Wrist_Pitch" type="revolute">
+    <parent link="B5"/>
+    <child link="B6"/>
+    <origin rpy="0 0 0" xyz="7.11 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-4.71239" upper="4.71239" effort="2332" velocity="0.0698132"/>
+  </joint>
+
+  <!-- Link 6 -->
+  <link name="B6">
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="105.98"/>
+      <inertia ixx="8.305" ixy="0" ixz="0" iyy="3.061" iyz="0" izz="8.0386"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="1.5708 0 0" xyz="0 -0.2846 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.5692"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+  </link>
+
+  <!-- Joint 6: Wrist Yaw Joint -->
+  <joint name="Wrist_Yaw" type="revolute">
+    <parent link="B6"/>
+    <child link="B7"/>
+    <origin rpy="0 0 0" xyz="0 -0.5692 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-4.71239" upper="4.71239" effort="2332" velocity="0.0698132"/>
+  </joint>
+
+  <!-- Link 7 -->
+  <link name="B7">
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="105.98"/>
+      <inertia ixx="12.13" ixy="0" ixz="0" iyy="12.13" iyz="0" izz="3.061"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.3513"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.7026"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+  </link>
+
+  <!-- Joint 7: Wrist Roll Joint -->
+  <joint name="Wrist_Roll" type="revolute">
+    <parent link="B7"/>
+    <child link="B8"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.7026"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-4.71239" upper="4.71239" effort="2332" velocity="0.0698132"/>
+  </joint>
+
+  <!-- Link 8 -->
+  <link name="B8">
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="243.66"/>
+      <inertia ixx="9.336" ixy="0" ixz="0" iyy="44.41" iyz="0" izz="44.41"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 1.5708 0" xyz="0.67945 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="1.3589"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+
+    <visual>
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.04"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+
+  </link>
+
+  <!-- Fixed End-effector Joint -->
+  <joint name="joint_ee_fixed" type="fixed">
+    <parent link="B8"/>
+    <child link="link_ee"/>
+    <origin rpy="0 0 0" xyz="1.3589 0 0"/>
+  </joint>
+
+  <!-- End-Effector -->
+  <link name="link_ee">
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.06"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+  </link>
+
+
+</robot>
