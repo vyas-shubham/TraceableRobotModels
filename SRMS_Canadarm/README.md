@@ -1,6 +1,6 @@
 # Shuttle Remote Manipulator System (SRMS) / Canadarm Model
 
-This folder contains the robot manipulator arm model for Shuttle Remote Manipulator System (SRMS), better known as Canadarm or Canadarm1.
+This folder contains the robot manipulator arm model for the Shuttle Remote Manipulator System (SRMS), better known as Canadarm or Canadarm1.
 
 The publications used for creating the robot model URDF file are as follows:
 
